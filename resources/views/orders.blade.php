@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title> Contact us </title>
+    <title> </title>
 </head>
 
 <body>
-    <h1> Contact Form</h1>
+<h1> Orders </h1>
 </body>
 </html>

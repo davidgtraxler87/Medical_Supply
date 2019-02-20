@@ -16,6 +16,7 @@ class Order extends Migration
         Schema::create('orders', function (Blueprint $table) {
             $table->increments('id');
             $table->string('medical_device');
+            $table->string('order_type');
             $table->timestamp('delivery_date')->nullable();
             $table->string('status');
             $table->timestamps();
