@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Order extends Migration
+class OrderSchedule extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class Order extends Migration
      */
     public function up()
     {
-        Schema::create('orders', function (Blueprint $table) {
-            $table->increments('order_id');
-            $table->string('order_type');
-            $table->timestamp('delivery_date')->nullable();
-            $table->string('status');
+        Schema::create('order_schedule', function (Blueprint $table) {
+            $table->increments('order_equipment_id');
+            $table->string('order_id');
+            $table->string('date');
             $table->timestamps();
+
         });
     }
 
@@ -29,6 +29,6 @@ class Order extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('orders');
+        Schema::dropIfExists('order_schedule');
     }
 }

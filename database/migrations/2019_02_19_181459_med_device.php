@@ -13,7 +13,16 @@ class MedDevice extends Migration
      */
     public function up()
     {
-        //
+        Schema::create('equipment', function (Blueprint $table) {
+            $table->increments('equipment_id');
+            $table->string('name');
+            $table->string('brand');
+            $table->string('category');
+            $table->double('price');
+            $table->integer('stock_amount');
+            $table->string('image')->nullable();
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +32,6 @@ class MedDevice extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists('equipment');
     }
 }
