@@ -99,8 +99,13 @@
                             <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
 
                             <div class="col-md-6">
-
-                                <input id="state" type="text" class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}" name="state" value="{{ old('state') }}" required autofocus>
+                                <select id="state"  class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}" name="state" required>
+                                    @foreach(config('constants.state') as $abbr => $state)
+                                    <option value="{{$abbr}}">{{$state}}</option>
+                                    @endforeach
+                                </select>
+                                {{--{{ json_encode(config('constants.state')) }}--}}
+                                {{--<input id="state" type="text" class="form-control" value="{{ old('state') }}"autofocus>--}}
                                 @if ($errors->has('state'))
                                     <span class="invalid-feedback" role="alert">
                                         <strong>{{ $errors->first('state') }}</strong>
