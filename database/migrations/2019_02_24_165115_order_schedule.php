@@ -14,7 +14,7 @@ class OrderSchedule extends Migration
     public function up()
     {
         Schema::create('order_schedule', function (Blueprint $table) {
-            $table->increments('order_equipment_id');
+            $table->increments('order_schedule_id');
             $table->string('order_id');
             $table->string('date');
             $table->timestamps();
