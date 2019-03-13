@@ -17,7 +17,7 @@ Route::get('/', function () {
 
 Route::get('/contact', function () {
     return view('contact');
-});
+})->name('contact');
 
 Route::get('/orders', function () {
     return view('orders');
@@ -30,3 +30,5 @@ Route::get('/profile', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::post('/contact', 'HomeController@sendMail')->name('postContact');
