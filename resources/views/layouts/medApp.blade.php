@@ -17,6 +17,7 @@
     <link rel="stylesheet" href="css/flaticon.css">
     <link rel="stylesheet" href="css/icomoon.css">
     <link rel="stylesheet" href="css/style.css">
+    @yield('header_content')
 </head>
 <body>
 <nav class="navbar py-4 navbar-expand-lg ftco_navbar navbar-light bg-light flex-row">
@@ -55,7 +56,7 @@
         </p>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link pl-0">Home</a></li>
+                <li class="nav-item active"><a href="{{ route('/') }}" class="nav-link pl-0">Home</a></li>
                 <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{ route('products') }}" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="#" class="nav-link">Departments</a></li>
@@ -179,6 +180,6 @@
 <script src="js/aos.js"></script>
 <script src="js/scrollax.min.js"></script>
 <script src="js/main.js"></script>
-
+@yield('footer_content')
 </body>
 </html>

@@ -11,9 +11,11 @@
 |
 */
 
-Route::get('/', function () {
-    return view('/welcome');
-})->name('/');
+Route::get('/', 'FrontEndController@index')->name('/');
+
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
 
 Route::get('about', function () {
     return view('about');
@@ -23,28 +25,16 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::get('/home', function () {
-    return view('home');
-})->name('home');
+Route::get('/equipment', 'FrontEndController@equipment')->name('equipment');
 
-Route::get('/orders', function () {
-    return view('orders');
-});
-
-Route::get('/profile', function () {
-    return view('profile');
-})->name('profile');
-
-Route::get('/products', function () {
-    return view('products');
-})->name('products');
-
-Route::get('/orders', function () {
-    return view('orders');
-})->name('orders');
+Route::post('/contact', 'FrontEndController@sendMail')->name('postContact');
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/home', 'BackEndController@home')->name('home');
 
-Route::post('/contact', 'HomeController@sendMail')->name('postContact');
+Route::get('/profile', 'BackEndController@profile')->name('profile');
+
+Route::get('/orders', 'BackEndController@orders')->name('orders');
+
+

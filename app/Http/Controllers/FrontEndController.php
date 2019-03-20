@@ -6,18 +6,11 @@ use App\Mail\ContactMail;
 use App\Mail\ResponseMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use App\Equipment;
+use Yajra\Datatables\Datatables;
 
-class HomeController extends Controller
+class FrontEndController extends Controller
 {
-    /**
-     * Create a new controller instance.
-     *
-     * @return void
-     */
-    public function __construct()
-    {
-//        $this->middleware('auth');
-    }
 
     /**
      * Show the application dashboard.
@@ -26,7 +19,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        return view('welcome');
     }
 
     public function sendMail(Request $request)
@@ -36,6 +29,12 @@ class HomeController extends Controller
         $email = new ResponseMail($request);
         Mail::to($request->input('email'))->send($email);
         return redirect('contact')->with('status', 'Message sent!');
+    }
+
+    public function equipment()
+    {
+        $equipmentData = Equipment::all();
+        return DataTables::of($equipmentData);
     }
 
 
