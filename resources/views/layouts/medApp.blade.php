@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Dr.care - Free Bootstrap 4 Template by Colorlib</title>
+    <title>MedSupply</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- CSRF Token -->
@@ -23,13 +23,13 @@
     <div class="container">
         <div class="row no-gutters d-flex align-items-start align-items-center px-3 px-md-0">
             <div class="col-lg-2 pr-4 align-items-center">
-                <a class="navbar-brand" href="index.html">Dr.<span>care</span></a>
+                <a class="navbar-brand" href="/">Med<span>Supply</span></a>
             </div>
             <div class="col-lg-10 d-none d-md-block">
                 <div class="row d-flex">
                     <div class="col-md-4 pr-4 d-flex topper align-items-center">
                         <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-map"></span></div>
-                        <span class="text">Address: 198 West 21th Street, Suite 721 New York NY 10016</span>
+                        <span class="text">Address: </br> 3100 E New Orleans St. Broken Arrow, OK 74014-3501</span>
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-paper-plane"></span></div>
@@ -37,7 +37,7 @@
                     </div>
                     <div class="col-md pr-4 d-flex topper align-items-center">
                         <div class="icon bg-white mr-2 d-flex justify-content-center align-items-center"><span class="icon-phone2"></span></div>
-                        <span class="text">Phone: + 1235 2355 98</span>
+                        <span class="text">Phone: (918)123 4567</span>
                     </div>
                 </div>
             </div>
@@ -50,17 +50,17 @@
             <span class="oi oi-menu"></span> Menu
         </button>
         <p class="button-custom order-lg-last mb-0">
-            <a href="/register" class="btn btn-secondary py-2 px-3">Register</a>
             <a href="/login" class="btn btn-primary py-2 px-3">Login</a>
+            <a href="/register" class="btn btn-secondary py-2 px-3">Register</a>
         </p>
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item active"><a href="index.html" class="nav-link pl-0">Home</a></li>
-                <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                <li class="nav-item"><a href="doctor.html" class="nav-link">Doctor</a></li>
-                <li class="nav-item"><a href="department.html" class="nav-link">Departments</a></li>
-                <li class="nav-item"><a href="pricing.html" class="nav-link">Pricing</a></li>
-                <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
+                <li class="nav-item active"><a href="{{ route('home') }}" class="nav-link pl-0">Home</a></li>
+                <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
+                <li class="nav-item"><a href="{{ route('products') }}" class="nav-link">Products</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Departments</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+                <li class="nav-item"><a href="#" class="nav-link">Blog</a></li>
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
             </ul>
         </div>

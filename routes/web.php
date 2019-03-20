@@ -12,12 +12,20 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('/welcome');
+})->name('/');
+
+Route::get('about', function () {
+    return view('about');
+})->name('about');
 
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
+
+Route::get('/home', function () {
+    return view('home');
+})->name('home');
 
 Route::get('/orders', function () {
     return view('orders');
@@ -26,6 +34,14 @@ Route::get('/orders', function () {
 Route::get('/profile', function () {
     return view('profile');
 })->name('profile');
+
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
+
+Route::get('/orders', function () {
+    return view('orders');
+})->name('orders');
 
 Auth::routes();
 

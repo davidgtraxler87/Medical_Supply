@@ -1,14 +1,20 @@
 <?php
+/**
+ * Created by PhpStorm.
+ * User: User
+ * Date: 3/19/2019
+ * Time: 7:13 PM
+ */
 
 namespace App\Mail;
-
 use Illuminate\Bus\Queueable;
 use Illuminate\Http\Request;
 use Illuminate\Mail\Mailable;
 use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
-class ContactMail extends Mailable
+
+class ResponseMail extends Mailable
 {
     use Queueable, SerializesModels;
 
@@ -37,8 +43,6 @@ class ContactMail extends Mailable
      */
     public function build()
     {
-        return $this->view('email.contact');
+        return $this->view('email.response');
     }
-
-
 }
