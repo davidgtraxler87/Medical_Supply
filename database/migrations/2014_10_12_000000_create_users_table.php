@@ -18,7 +18,6 @@ class CreateUsersTable extends Migration
             $table->string('first_name');
             $table->string('middle_name');
             $table->string('last_name');
-            //table->string('name');
             $table->string('institution');
             $table->string('street_address');
             $table->string('city');
@@ -29,6 +28,12 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            $table->string('telephone_number')->nullable();
+            $table->string('cardholder_name')->nullable();
+            $table->string('card_number')->nullable();
+            $table->string('month')->nullable();
+            $table->string('year')->nullable();
+            $table->string('cvv')->nullable();
         });
     }
 

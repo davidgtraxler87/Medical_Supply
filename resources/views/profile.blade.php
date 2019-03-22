@@ -179,14 +179,14 @@
                                         </div>
                                     </div>
                                     <div class="form-group row">
-                                        <label for="Card_number" class="col-md-4 col-form-label text-md-right">{{ __('Card Number') }}</label>
+                                        <label for="card_number" class="col-md-4 col-form-label text-md-right">{{ __('Card Number') }}</label>
 
                                         <div class="col-md-6">
-                                            <input id="Card_number" type="text" class="form-control{{ $errors->has('Card_number') ? ' is-invalid' : '' }}" name="Card_number" value="{{ old('Card_number') }}" required autofocus>
+                                            <input id="card_number" type="text" class="form-control{{ $errors->has('card_number') ? ' is-invalid' : '' }}" name="card_number" value="{{ old('card_number') }}" required autofocus>
 
-                                            @if ($errors->has('Card_number'))
+                                            @if ($errors->has('card_number'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('Card_number') }}</strong>
+                                                    <strong>{{ $errors->first('card_number') }}</strong>
                                                 </span>
                                             @endif
                                         </div>
@@ -195,12 +195,34 @@
                                     <div class="form-group row">
                                         <label for="Expiry_Date" class="col-md-4 col-form-label text-md-right">{{ __('Expiry Date') }}</label>
 
-                                        <div class="col-md-6">
-                                            <input id="Expiry_Date" type="text" class="form-control{{ $errors->has('Expiry_Date') ? ' is-invalid' : '' }}" name="Expiry_Date" value="{{ old('Expiry_Date') }}" required autofocus>
+                                        <div class="col-md-2">
 
-                                            @if ($errors->has('Expiry_Date'))
+                                            <select id="month"  class="form-control{{ $errors->has('month') ? ' is-invalid' : '' }}" name="month" required>
+                                                <option></option>
+                                                @foreach(config('constants.month') as $abbr => $Month)
+                                                    <option value="{{$abbr}}">{{$Month}}</option>
+                                                @endforeach
+                                            </select>
+
+                                            @if ($errors->has('month'))
                                                 <span class="invalid-feedback" role="alert">
-                                                    <strong>{{ $errors->first('Expiry_Date') }}</strong>
+                                                    <strong>{{ $errors->first('month') }}</strong>
+                                                </span>
+                                            @endif
+
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <select id="year"  class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}" name="year" required>
+                                                <option></option>
+                                                @foreach(config('constants.year') as $abbr => $Year)
+                                                    <option value="{{$abbr}}">{{$Year}}</option>
+                                                @endforeach
+                                            </select>
+
+                                            @if ($errors->has('year'))
+                                                <span class="invalid-feedback" role="alert">
+                                                    <strong>{{ $errors->first('year') }}</strong>
                                                 </span>
                                             @endif
                                         </div>

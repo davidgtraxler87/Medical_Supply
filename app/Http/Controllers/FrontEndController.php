@@ -34,7 +34,8 @@ class FrontEndController extends Controller
     public function equipment()
     {
         $equipmentData = Equipment::all();
-        return DataTables::of($equipmentData);
+        $data = DataTables::of($equipmentData)->toJson();
+        return response()->json($data);
     }
 
 
