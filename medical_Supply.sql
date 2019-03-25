@@ -1,1 +1,0 @@
-usersSELECT * FROM medical_supply.password_resets;

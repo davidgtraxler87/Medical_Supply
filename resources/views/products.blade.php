@@ -7,27 +7,25 @@
 
 @section('content')
     <div class="container">
-        <div class="row justify-content-center">
-            <div class="col-md-8">
+        <div class="row justify-content-left">
+            <div class="col-md-14">
                 <div class="card">
                     <div class="card-header"><strong>Product Listing</strong></div>
-                    <table class="datatable mdl-data-table dataTable" cellspacing="0"
+                    <table id="equipmentTable" class="datatable mdl-data-table dataTable" cellspacing="0"
                            width="100%" role="grid" style="width: 100%;">
                         <thead class="thead-dark">
                         <tr>
                             <th scope="col">Image</th>
-                            <th scope="col">Item #</th>
-                            <th scope="col">Item</th>
+                            <th scope="col">Equipment Id</th>
+                            <th scope="col">Name</th>
                             <th scope="col">Brand</th>
                             <th scope="col">Category</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Quantity</th>
+                            <th scope="col">Stock Amount</th>
                             <th scope="col">Select</th>
 
                         </tr>
                         </thead>
-                        <tbody>
-                        </tbody>
                     </table>
                 </div>
             </div>
@@ -40,14 +38,20 @@
     <script src="https://cdn.datatables.net/1.10.19/js/dataTables.material.min.js"></script>
     <script>
         $(document).ready(function() {
-            $('.datatable').DataTable({
+            $('#equipmentTable').DataTable({
                 processing: true,
                 serverSide: true,
                 ajax: '{{ route('equipment') }}',
-                columnDefs: [{
-                    targets: [0, 1, 2],
-                    className: 'mdl-data-table__cell--non-numeric'
-                }]
+                columns: [
+                    { data: 'image' },
+                    { data: 'equipment_id' },
+                    { data: 'name' },
+                    { data: 'brand' },
+                    { data: 'category'},
+                    { data: 'price'},
+                    { data: 'stock_amount'},
+                    { data: 'select', orderable: false, searchable: false },
+                ]
             });
         });
 
