@@ -21,7 +21,7 @@
                             <th scope="col">Brand</th>
                             <th scope="col">Category</th>
                             <th scope="col">Price</th>
-                            <th scope="col">Stock Amount</th>
+                            <th scope="col">Quantity</th>
                             <th scope="col">Select</th>
 
                         </tr>
@@ -49,7 +49,7 @@
                     { data: 'brand' },
                     { data: 'category'},
                     { data: 'price'},
-                    { data: 'stock_amount'},
+                    { data: 'quantity'},
                     { data: 'select', orderable: false, searchable: false },
                 ]
             });

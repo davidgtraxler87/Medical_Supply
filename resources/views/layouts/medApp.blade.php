@@ -180,6 +180,7 @@
 <script src="js/aos.js"></script>
 <script src="js/scrollax.min.js"></script>
 <script src="js/main.js"></script>
+<script src="js/medSupply.js"></script>
 @yield('footer_content')
 </body>
 </html>

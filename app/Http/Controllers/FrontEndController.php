@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Mail\ContactMail;
 use App\Mail\ResponseMail;
-use App\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
 use App\Equipment;
@@ -45,18 +44,21 @@ class FrontEndController extends Controller
                 return '<b>' . $equipment->name . '</b>';
             })
             ->editColumn('image', function ($equipment) {
-                return '<img src="images/product/' . $equipment->image . '" width="100px" height="auto"/>';
+                return '<img src="images/product/' . $equipment->image . '" width="auto" height="100px"/>';
             })
             ->editColumn('price', function ($equipment) {
                 return '$' . $equipment->price;
             })
-            ->addColumn('select', 'eloquent.tables.users-action')
+            ->addColumn('quantity', function ($equipment) {
+                return '<input id="quantity-' . $equipment->equipment_id . '" value="0" maxlength="4" size="4" />';
+            })
+            ->addColumn('select', '<button class="addToCartBtn" type="button">Add to Cart</button>')
+            ->removeColumn('stock_amount')
             ->removeColumn('created_at')
             ->removeColumn('updated_at')
             ->orderColumn('image', '-image $1')
-            ->rawColumns(['name', 'image', 'select'])
+            ->rawColumns(['name', 'image', 'quantity', 'select'])
             ->toJson();
-
 
     }
 

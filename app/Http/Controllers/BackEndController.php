@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class BackEndController extends Controller
 {
@@ -18,7 +19,12 @@ class BackEndController extends Controller
 
     public function profile()
     {
-        return view('profile');
+        $user = Auth::user();
+        $profileInfo = [
+            'firstName' => $user->first_name,
+            'lastName' => $user->last_name,
+        ];
+        return view('profile', $profileInfo);
     }
 
     public function home()
