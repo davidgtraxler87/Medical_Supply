@@ -22,7 +22,14 @@ class BackEndController extends Controller
         $user = Auth::user();
         $profileInfo = [
             'firstName' => $user->first_name,
+            'middleName' => $user->middle_name,
             'lastName' => $user->last_name,
+            'institution' => $user->institution,
+            'streetAddress' => $user->street_address,
+            'city' => $user->city,
+            'state' => $user->state,
+            'zipCode' => $user->zip_code,
+            'email' => $user->email,
         ];
         return view('profile', $profileInfo);
     }

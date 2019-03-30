@@ -38,7 +38,7 @@
                             <div class="col-md-6">
                                 <input id="middle_name" type="text"
                                        class="form-control{{ $errors->has('middle_name') ? ' is-invalid' : '' }}"
-                                       name="middle_name" value="{{ old('middle_name') }}" required autofocus>
+                                       name="middle_name" value="{{ old('middle_name')? old('middle_name') : $middleName  }}" required autofocus>
 
                                 @if ($errors->has('middle_name'))
                                     <span class="invalid-feedback" role="alert">
@@ -76,8 +76,8 @@
 
                             <div class="col-md-6">
                                 <input id="email" type="email"
-                                       class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" name="email"
-                                       value="{{ old('email') }}" required>
+                                       class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}"
+                                       name="email" value="{{ old('email') ? old('email') : $email }}" required>
 
                                 @if ($errors->has('email'))
                                     <span class="invalid-feedback" role="alert">
@@ -114,7 +114,7 @@
                             <div class="col-md-6">
                                 <input id="institution" type="text"
                                        class="form-control{{ $errors->has('institution') ? ' is-invalid' : '' }}"
-                                       name="institution" value="{{ old('institution') }}" required autofocus>
+                                       name="institution" value="{{ old('institution') ? old('institution') : $institution }}" required autofocus>
 
                                 @if ($errors->has('institution'))
                                     <span class="invalid-feedback" role="alert">
@@ -130,7 +130,7 @@
                             <div class="col-md-6">
                                 <input id="street_address" type="text"
                                        class="form-control{{ $errors->has('street_address') ? ' is-invalid' : '' }}"
-                                       name="street_address" value="{{ old('street_address') }}" required autofocus>
+                                       name="street_address" value="{{ old('street_address') ? old('street_address') : $streetAddress}}" required autofocus>
 
                                 @if ($errors->has('street_address'))
                                     <span class="invalid-feedback" role="alert">
@@ -145,8 +145,8 @@
 
                             <div class="col-md-6">
                                 <input id="city" type="text"
-                                       class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}" name="city"
-                                       value="{{ old('city') }}" required autofocus>
+                                       class="form-control{{ $errors->has('city') ? ' is-invalid' : '' }}"
+                                       name="city" value="{{ old('city') ? old('city') : $city}}" required autofocus>
 
                                 @if ($errors->has('city'))
                                     <span class="invalid-feedback" role="alert">
@@ -160,12 +160,10 @@
                             <label for="state" class="col-md-4 col-form-label text-md-right">{{ __('State') }}</label>
 
                             <div class="col-md-6">
-                                <select id="state" class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}"
-                                        name="state" required>
-                                    @foreach(config('constants.state') as $abbr => $state)
-                                        <option value="{{$abbr}}">{{$state}}</option>
-                                    @endforeach
-                                </select>
+                                <input id="state" type="text"
+                                        class="form-control{{ $errors->has('state') ? ' is-invalid' : '' }}"
+                                        name="state" value="{{ old('state') ? old('state') : $state }}" required autofocus>
+
                                 {{--{{ json_encode(config('constants.state')) }}--}}
                                 {{--<input id="state" type="text" class="form-control" value="{{ old('state') }}"autofocus>--}}
                                 @if ($errors->has('state'))
@@ -183,7 +181,7 @@
                             <div class="col-md-6">
                                 <input id="zip_code" type="text"
                                        class="form-control{{ $errors->has('zip_code') ? ' is-invalid' : '' }}"
-                                       name="zip_code" value="{{ old('zip_code') }}" required autofocus>
+                                       name="zip_code" value="{{ old('zip_code') ? old('zip_code') : $zipCode  }}" required autofocus>
 
                                 @if ($errors->has('zip_code'))
                                     <span class="invalid-feedback" role="alert">
@@ -195,7 +193,8 @@
                     </form>
                     <div class="card-header">Payment Information</div>
                     <div class="card-body"></div>
-                    <form>
+                    <form method="POST" action="{{ route('profile') }}">
+                        @csrf
                         <div class="form-group row">
                             <label for="cardholder_name"
                                    class="col-md-4 col-form-label text-md-right">{{ __('Cardholder Name') }}</label>
