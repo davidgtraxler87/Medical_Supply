@@ -8,8 +8,8 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                 <div class="col-md-6 text ftco-animate">
-                    <h1 class="mb-4">Getting the products <span> you need, fast!</span></h1>
-                    <h3 class="subheading">Quick and reliable service.</h3>
+                    <h1 class="mb-6">Getting the products <span> you need, fast!</span></h1>
+                    <h3 class="subheading">Quality products at your fingertips.</h3>
                     <p><a href="{{ route('products') }}" class="btn btn-secondary px-4 py-3 mt-3">View our products</a></p>
                 </div>
             </div>
@@ -21,9 +21,9 @@
         <div class="container">
             <div class="row no-gutters slider-text align-items-center justify-content-start" data-scrollax-parent="true">
                 <div class="col-md-6 text ftco-animate">
-                    <h1 class="mb-4">We Care <span>About Your Health</span></h1>
-                    <h3 class="subheading">Your Health is Our Top Priority with Comprehensive, Affordable medical.</h3>
-                    <p><a href="#" class="btn btn-secondary px-4 py-3 mt-3">View our works</a></p>
+                    <h1 class="mb-4">We Care <span>About Your Institution's Needs</span></h1>
+                    <h3 class="subheading">Helping you deliver quality </br> care to your patients.</h3>
+                    <p><a href="{{ route('register') }}" class="btn btn-secondary px-4 py-3 mt-3">Register Now!</a></p>
                 </div>
             </div>
         </div>
@@ -36,7 +36,7 @@
             <div class="col-md-3 d-flex services align-self-stretch p-4 ftco-animate">
                 <div class="media block-6 d-block text-center">
                     <div class="icon d-flex justify-content-center align-items-center">
-                        <span class="flaticon-doctor"></span>
+                        <span class="flaticon-first-aid-kit"></span>
                     </div>
                     <div class="media-body p-2 mt-3">
                         <h3 class="heading">Qualitfied Doctors</h3>
@@ -51,7 +51,7 @@
                     </div>
                     <div class="media-body p-2 mt-3">
                         <h3 class="heading">Emergency Care</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p>You care about your patients. So do we. We help you accomplish this by delivering quality products. To You. </p>
                     </div>
                 </div>
             </div>
@@ -73,7 +73,7 @@
                     </div>
                     <div class="media-body p-2 mt-3">
                         <h3 class="heading">24 Hours Service</h3>
-                        <p>Even the all-powerful Pointing has no control about the blind texts it is an almost unorthographic.</p>
+                        <p>Confused? Have an issue? Our technicians are waiting for something to break 24/7. We are here for you.</p>
                     </div>
                 </div>
             </div>

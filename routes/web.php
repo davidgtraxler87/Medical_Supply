@@ -34,6 +34,11 @@ Auth::routes();
 Route::get('/home', 'BackEndController@home')->name('home');
 
 Route::get('/profile', 'BackEndController@profile')->name('profile');
+Route::patch('/profile', 'BackEndController@profile')->name('postProfile');
+
+//Route::get('/profile', function () {
+//    return view('profile');
+//})->name('profile');
 
 Route::get('/orders', 'BackEndController@orders')->name('orders');
 

@@ -19,3 +19,7 @@ var cartSystem = (function () {
 $(document).ready(function() {
     cartSystem.init();
 });
+
+let submit = $("#profile").submit();
+
+$("#profile").empty();
