@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
@@ -20,7 +21,6 @@ class BackEndController extends Controller
 
     public function profile(Request $request)
     {
-
         $user = Auth::user();
 
         $profile = User::find($user->id);
@@ -58,6 +58,45 @@ class BackEndController extends Controller
 
     public function orders()
     {
+        //TODO logic to get table data
         return view('orders');
+    }
+
+    public function addToCart(Request $request)
+    {
+        $method = $request->method();
+        if (Auth::check() && $request->isMethod('POST')) {
+            $user = Auth::user();
+            $cart = new Cart();
+            $cart->user_id = $user->getAuthIdentifier();
+            $cart->order_equipment_id = $request->equipmentId;
+            $cart->quantity = $request->quantity;
+            $cart->save();
+            return [
+                'success' => true
+            ];
+        } else {
+            return [
+                'success' => false,
+                'error' => 'Something went wrong',
+            ];
+        }
+    }
+
+    public function checkCart()
+    {
+        if (Auth::check()) {
+            $user = Auth::user();
+            $numberOfCartItems = Cart::where('user_id', $user->getAuthIdentifier())->count();
+            //$numberOfCartItems = count($c)
+            if ($numberOfCartItems > 0) {
+                return [
+                    'success' => true
+                ];
+            }
+        }
+        return [
+            'success' => false
+        ];
     }
 }

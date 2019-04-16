@@ -1,6 +1,7 @@
 @extends('layouts.medApp')
 
 @section('header_content')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.1.0/material.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.10.19/css/dataTables.material.min.css">
 @endsection
@@ -21,8 +22,10 @@
                             <th scope="col">Brand</th>
                             <th scope="col">Category</th>
                             <th scope="col">Price</th>
+                            @auth
                             <th scope="col">Quantity</th>
                             <th scope="col">Select</th>
+                            @endauth
 
                         </tr>
                         </thead>
@@ -49,8 +52,10 @@
                     { data: 'brand' },
                     { data: 'category'},
                     { data: 'price'},
+                    @auth
                     { data: 'quantity'},
                     { data: 'select', orderable: false, searchable: false },
+                    @endauth
                 ]
             });
         });

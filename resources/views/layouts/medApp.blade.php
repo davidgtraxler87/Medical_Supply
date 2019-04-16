@@ -50,10 +50,28 @@
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="oi oi-menu"></span> Menu
         </button>
+        @guest
         <p class="button-custom order-lg-last mb-0">
             <a href="/login" class="btn btn-primary py-2 px-3">Login</a>
             <a href="/register" class="btn btn-secondary py-2 px-3">Register</a>
         </p>
+        @else
+
+            <p class="button-custom order-lg-last mb-0">
+                <a href="orders" class="btn btn-primary py-2 px-3" id='cartBtn' style="display: none">
+                    <span class="icon icon-shopping_cart"></span> Cart
+                </a>
+                <a class="btn btn-secondary py-2 px-3" href="{{ route('logout') }}"
+                   onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                    {{ __('Logout') }}
+                </a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
+                @csrf
+            </form>
+            </p>
+
+        @endguest
         <div class="collapse navbar-collapse" id="ftco-nav">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item active"><a href="{{ route('/') }}" class="nav-link pl-0">Home</a></li>

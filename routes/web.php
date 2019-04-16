@@ -42,4 +42,9 @@ Route::patch('/profile', 'BackEndController@profile')->name('postProfile');
 
 Route::get('/orders', 'BackEndController@orders')->name('orders');
 
+Route::post('/addToCart', 'BackEndController@addToCart');
+
+Route::get('/checkCart', 'BackEndController@checkCart');
+
+
 
