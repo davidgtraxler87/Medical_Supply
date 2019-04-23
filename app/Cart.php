@@ -13,4 +13,13 @@ class Cart extends Model
         'order_equipment_id',
         'quantity',
     ];
+
+
+    /**
+     * Get the equipments for the order cart.
+     */
+    public function equipment()
+    {
+        return $this->hasMany('App\Equipment', 'equipment_id', 'order_equipment_id')->first();
+    }
 }

@@ -17,7 +17,7 @@ Route::get('/products', function () {
     return view('products');
 })->name('products');
 
-Route::get('about', function () {
+Route::get('/about', function () {
     return view('about');
 })->name('about');
 
@@ -28,6 +28,10 @@ Route::get('/contact', function () {
 Route::get('/equipment', 'FrontEndController@equipment')->name('equipment');
 
 Route::post('/contact', 'FrontEndController@sendMail')->name('postContact');
+
+Route::get('/help', 'FrontEndController@help')->name('help');
+
+Route::get('/about', 'FrontEndController@about')->name('about');
 
 Auth::routes();
 
@@ -44,7 +48,11 @@ Route::get('/orders', 'BackEndController@orders')->name('orders');
 
 Route::post('/addToCart', 'BackEndController@addToCart');
 
+Route::post('/purchase', 'BackEndController@purchase')->name('purchase');
+
 Route::get('/checkCart', 'BackEndController@checkCart');
+
+
 
 
 

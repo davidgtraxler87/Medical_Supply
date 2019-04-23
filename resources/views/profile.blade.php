@@ -38,7 +38,7 @@
                             <div class="col-md-6">
                                 <input id="middle_name" type="text"
                                        class="form-control{{ $errors->has('middle_name') ? ' is-invalid' : '' }}"
-                                       name="middle_name" value="{{ old('middle_name')? old('middle_name') : $middleName  }}" required autofocus>
+                                       name="middle_name" value="{{ old('middle_name')? old('middle_name') : $middleName  }}" autofocus>
 
                                 @if ($errors->has('middle_name'))
                                     <span class="invalid-feedback" role="alert">
@@ -186,7 +186,7 @@
                                     @if ($errors->has('zip_code'))
                                         <span class="invalid-feedback" role="alert">
                                                 <strong>{{ $errors->first('zip_code') }}</strong>
-                                            </span>
+                                        </span>
                                     @endif
                                 </div>
 
@@ -206,8 +206,8 @@
 
                                     @if ($errors->has('cardholder_name'))
                                         <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('cardholder_name') }}</strong>
-                                                    </span>
+                                            <strong>{{ $errors->first('cardholder_name') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -222,8 +222,8 @@
 
                                     @if ($errors->has('card_number'))
                                         <span class="invalid-feedback" role="alert">
-                                                        <strong>{{ $errors->first('card_number') }}</strong>
-                                                    </span>
+                                            <strong>{{ $errors->first('card_number') }}</strong>
+                                        </span>
                                     @endif
                                 </div>
                             </div>
@@ -234,9 +234,13 @@
 
                                 <div class="col-md-2">
 
-                                    <input id="month" class="form-control{{ $errors->has('month') ? ' is-invalid' : '' }}"
-                                            name="month" value="{{ old('month') ? old('month') : $month  }}" required autofocus>
-
+                                    <select id="month" class="form-control{{ $errors->has('month') ? ' is-invalid' : '' }}"
+                                            name="month" value="{{ old('month') ? old('month') : $month  }}" required >
+                                        <option></option>
+                                        @foreach(config('constants.month') as $abbr => $month)
+                                            <option value="{{$abbr}}">{{$month}}</option>
+                                        @endforeach
+                                    </select>
                                     @if ($errors->has('month'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('month') }}</strong>
@@ -246,9 +250,13 @@
                                 </div>
 
                                 <div class="col-md-2">
-                                    <input id="year" class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}"
+                                    <select id="year" class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}"
                                             name="year" value="{{ old('year') ? old('year') : $year  }}" required autofocus>
-
+                                        <option></option>
+                                        @foreach(config('constants.year') as $abbr => $year)
+                                            <option value="{{$abbr}}">{{$year}}</option>
+                                        @endforeach
+                                    </select>
                                     @if ($errors->has('year'))
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $errors->first('year') }}</strong>

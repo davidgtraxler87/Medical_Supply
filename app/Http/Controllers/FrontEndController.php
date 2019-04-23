@@ -24,6 +24,16 @@ class FrontEndController extends Controller
         return view('welcome');
     }
 
+    public function about()
+    {
+        return view('about');
+    }
+
+    public function help()
+    {
+        return view('help');
+    }
+
     public function sendMail(Request $request)
     {
         $email = new ContactMail($request);

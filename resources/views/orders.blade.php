@@ -1,111 +1,73 @@
-@extends('layouts.app')
+@extends('layouts.medApp')
 
-
-@section('content')
-    <header class="main-header">
-        <nav class="main-nav nav">
-            <ul>
-                <li><a href="index.html">HOME</a></li>
-                <li><a href="store.html">STORE</a></li>
-                <li><a href="about.html">ABOUT</a></li>
-            </ul>
-        </nav>
-        <h1 class="band-name band-name-large">The Generics</h1>
-    </header>
-    <section class="container content-section">
-        <h2 class="section-header">MUSIC</h2>
-        <div class="shop-items">
-            <div class="shop-item">
-                <span class="shop-item-title">Album 1</span>
-                <img class="shop-item-image" src="Images/Album 1.png">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$12.99</span>
-                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Album 2</span>
-                <img class="shop-item-image" src="Images/Album 2.png">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$14.99</span>
-                    <button class="btn btn-primary shop-item-button"type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Album 3</span>
-                <img class="shop-item-image" src="Images/Album 3.png">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$9.99</span>
-                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Album 4</span>
-                <img class="shop-item-image" src="Images/Album 4.png">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$19.99</span>
-                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="container content-section">
-        <h2 class="section-header">MERCH</h2>
-        <div class="shop-items">
-            <div class="shop-item">
-                <span class="shop-item-title">T-Shirt</span>
-                <img class="shop-item-image" src="Images/Shirt.png">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$19.99</span>
-                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-            <div class="shop-item">
-                <span class="shop-item-title">Coffee Cup</span>
-                <img class="shop-item-image" src="Images/Cofee.png">
-                <div class="shop-item-details">
-                    <span class="shop-item-price">$6.99</span>
-                    <button class="btn btn-primary shop-item-button" type="button">ADD TO CART</button>
-                </div>
-            </div>
-        </div>
-    </section>
-    <section class="container content-section">
-        <h2 class="section-header">CART</h2>
-        <div class="cart-row">
-            <span class="cart-item cart-header cart-column">ITEM</span>
-            <span class="cart-price cart-header cart-column">PRICE</span>
-            <span class="cart-quantity cart-header cart-column">QUANTITY</span>
-        </div>
-        <div class="cart-items">
-        </div>
-        <div class="cart-total">
-            <strong class="cart-total-title">Total</strong>
-            <span class="cart-total-price">$0</span>
-        </div>
-        <button class="btn btn-primary btn-purchase" type="button">PURCHASE</button>
-    </section>
-    <footer class="main-footer">
-        <div class="container main-footer-container">
-            <h3 class="band-name">The Generics</h3>
-            <ul class="nav footer-nav">
-                <li>
-                    <a href="https://www.youtube.com" target="_blank">
-                        <img src="Images/YouTube Logo.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.spotify.com" target="_blank">
-                        <img src="Images/Spotify Logo.png">
-                    </a>
-                </li>
-                <li>
-                    <a href="https://www.facebook.com" target="_blank">
-                        <img src="Images/Facebook Logo.png">
-                    </a>
-                </li>
-            </ul>
-        </div>
-    </footer>
+@section('header_content')
+    <meta name="csrf-token" content="{{ csrf_token() }}">
 
 @endsection
+
+@section('content')
+    <div class="container">
+        <div class="row justify-content-center">
+            <div class="col-md-14">
+                <div class="card">
+                    <div class="card-header"><strong>Cart</strong></div>
+                    <table id="userCart" class="datatable mdl-data-table dataTable" cellspacing="0"
+                           width="100%" role="grid" style="width: 100%;">
+                        <thead class="thead-dark">
+                        <tr>
+                            <th scope="col">Image</th>
+                            <th scope="col">Equipment Id</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Brand</th>
+                            <th scope="col">Category</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quanity</th>
+                            <th scope="col">Sub-Total</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        @php
+                        $total = 0;
+                        @endphp
+                        @foreach($cartInfo as $cartItem)
+                            @php
+                            $equipment = $cartItem->equipment();
+                            $total = $total + ($equipment->price * $cartItem->quantity);
+                            @endphp
+
+                        <tr>
+                            <td scope="row">'<img src="images/product/{{$equipment->image}}" width="auto" height="100px"/>'</td>
+                            <td>{{$equipment->equipment_id}}</td>
+                            <td>{{$equipment->name}}</td>
+                            <td>{{$equipment->brand}}</td>
+                            <td>{{$equipment->category}}</td>
+                            <td>{{$equipment->price}}</td>
+                            <td>{{$cartItem->quantity}}</td>
+                            <td>{{$equipment->price * $cartItem->quantity}}</td>
+                        </tr>
+                        @endforeach
+                        <tr>
+                        <td colspan="7"><b>Total</b></td>
+                            <td><b>{{$total}}</b></td>
+                        </tr>
+                        </tbody>
+
+                    </table>
+
+                </div>
+                // TODO warp this button in a form to post to backend controller
+                // Post should hit a new method in the backend controller
+                // That method can check $request->confirm === "Purchase"
+
+                <form name="Purchase" method="POST" action="{{ route('purchase') }}">
+                    @csrf
+                    <div class="form-group">
+                        <input class="btn btn-primary py-2 px-3" type="submit" name="confirm" value="Purchase">
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+@endsection
+
+

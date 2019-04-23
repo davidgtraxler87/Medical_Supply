@@ -3,9 +3,11 @@
 namespace App\Http\Controllers;
 
 use App\Cart;
+use App\Mail\PurchaseMail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use Illuminate\Support\Facades\Mail;
 
 class BackEndController extends Controller
 {
@@ -24,7 +26,7 @@ class BackEndController extends Controller
         $user = Auth::user();
 
         $profile = User::find($user->id);
-        $method = $request->method();
+
         if ($request->isMethod('PATCH')) {
             $profile->fill($request->all());
             $profile->save();
@@ -59,12 +61,15 @@ class BackEndController extends Controller
     public function orders()
     {
         //TODO logic to get table data
-        return view('orders');
+        $user = Auth::user();
+
+        $orders = Cart::where('user_id', $user->id)->get();
+
+        return view('orders',  ['cartInfo' => $orders]);
     }
 
     public function addToCart(Request $request)
     {
-        $method = $request->method();
         if (Auth::check() && $request->isMethod('POST')) {
             $user = Auth::user();
             $cart = new Cart();
@@ -82,6 +87,28 @@ class BackEndController extends Controller
             ];
         }
     }
+
+    public function purchase(Request $request)
+    {
+        $user = Auth::user();
+
+        if ($request->confirm === "Purchase") {
+            // If true, get the orders from cart and create email. ie. mailable class and view
+            $orders = Cart::where('user_id', $user->id)->get();
+            $email = new PurchaseMail($user, $orders);
+            Mail::to('david.g.traxler87@gmail.com')->send($email);
+            // Delete data for user from order_cart table
+            Cart::where('user_id', $user->id)->delete();
+            // redirect order placed page?
+            return redirect('orders')->with('status', 'Order placed!');
+        }
+
+        return redirect('orders')->with('status', 'Something went wrong!');
+
+
+
+    }
+
 
     public function checkCart()
     {

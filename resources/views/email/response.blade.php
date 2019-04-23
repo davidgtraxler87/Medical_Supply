@@ -10,7 +10,7 @@
 
 <body>
 <div>
-    <h1>Thank you for reaching out to us,{{ $name }}</h1>
+    <h1>Thank you for reaching out to us, {{ $name }}</h1>
     <p>One of our technicians will respond to your message shortly.</p>
 
 
