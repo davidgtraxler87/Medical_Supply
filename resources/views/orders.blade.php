@@ -6,23 +6,24 @@
 @endsection
 
 @section('content')
+
     <div class="container">
         <div class="row justify-content-center">
-            <div class="col-md-14">
+            <div class="col-lg-100">
                 <div class="card">
                     <div class="card-header"><strong>Cart</strong></div>
                     <table id="userCart" class="datatable mdl-data-table dataTable" cellspacing="0"
-                           width="100%" role="grid" style="width: 100%;">
-                        <thead class="thead-dark">
+                           width="100%" role="grid" style="text-align: center; width: 100%;">
+                        <thead class="thead-dark"  >
                         <tr>
-                            <th scope="col">Image</th>
-                            <th scope="col">Equipment Id</th>
-                            <th scope="col">Name</th>
-                            <th scope="col">Brand</th>
-                            <th scope="col">Category</th>
-                            <th scope="col">Price</th>
-                            <th scope="col">Quanity</th>
-                            <th scope="col">Sub-Total</th>
+                            <th scope="col" style ="width: 12%;">Image</th>
+                            <th scope="col" style ="width: 15%;">Equipment Id</th>
+                            <th scope="col" style ="width: 15%;">Name</th>
+                            <th scope="col" style ="width: 12%;">Brand</th>
+                            <th scope="col" style ="width: 12%;">Category</th>
+                            <th scope="col" style ="width: 9%;">Price</th>
+                            <th scope="col" style ="width: 9%;">Quantity</th>
+                            <th scope="col" style ="width: 12%;">Sub-Total</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -36,8 +37,8 @@
                             @endphp
 
                         <tr>
-                            <td scope="row">'<img src="images/product/{{$equipment->image}}" width="auto" height="100px"/>'</td>
-                            <td>{{$equipment->equipment_id}}</td>
+                            <td scope="row"><img src="images/product/{{$equipment->image}}" width="auto" height="100px"/></td>
+                            <td> {{$equipment->equipment_id}} </td>
                             <td>{{$equipment->name}}</td>
                             <td>{{$equipment->brand}}</td>
                             <td>{{$equipment->category}}</td>
@@ -55,14 +56,13 @@
                     </table>
 
                 </div>
-                // TODO warp this button in a form to post to backend controller
-                // Post should hit a new method in the backend controller
-                // That method can check $request->confirm === "Purchase"
+
 
                 <form name="Purchase" method="POST" action="{{ route('purchase') }}">
                     @csrf
                     <div class="form-group">
-                        <input class="btn btn-primary py-2 px-3" type="submit" name="confirm" value="Purchase">
+                                <br/>
+                        <input  class="btn btn-primary py-2 px-3" type="submit" name="confirm" value="Purchase">
                     </div>
                 </form>
             </div>

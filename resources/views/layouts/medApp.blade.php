@@ -78,7 +78,6 @@
                 <li class="nav-item"><a href="{{ route('about') }}" class="nav-link">About</a></li>
                 <li class="nav-item"><a href="{{ route('products') }}" class="nav-link">Products</a></li>
                 <li class="nav-item"><a href="{{ route('contact') }}" class="nav-link">Contact</a></li>
-                <li class="nav-item"><a href="{{ route('help') }}" class="nav-link">Help</a></li>
             </ul>
         </div>
     </div>
@@ -117,7 +116,6 @@
                         <li><a href="{{ route('about') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>About</a></li>
                         <li><a href="{{ route('products') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>Products</a></li>
                         <li><a href="{{ route('contact') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>Contact</a></li>
-                        <li><a href="{{ route('help') }}"><span class="ion-ios-arrow-round-forward mr-2"></span>Help</a></li>
                     </ul>
                 </div>
 

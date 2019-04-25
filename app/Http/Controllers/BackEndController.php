@@ -100,7 +100,7 @@ class BackEndController extends Controller
             // Delete data for user from order_cart table
             Cart::where('user_id', $user->id)->delete();
             // redirect order placed page?
-            return redirect('orders')->with('status', 'Order placed!');
+            return redirect('orders')->with('status', alert('Thank you for your order!'));
         }
 
         return redirect('orders')->with('status', 'Something went wrong!');

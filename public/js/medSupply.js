@@ -25,7 +25,7 @@ var cartSystem = (function () {
         })
             .done(function( result ) {
                 if (result.success) {
-                    alert( "Data Saved! ");
+                    alert( "Items added to cart! ");
                     // Disable the button
                     $btn.attr('disabled', true);
                     $('#cartBtn').show();

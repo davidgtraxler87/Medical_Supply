@@ -41,7 +41,7 @@ class FrontEndController extends Controller
         $email = new ResponseMail($request);
         Mail::to($request->input('email'))->send($email);
 
-        return redirect('contact')->with('status', 'Message sent!');
+        return redirect('contact')->with('status', alert('Message sent!'));
     }
 
     public function equipment(Datatables $datatables)
