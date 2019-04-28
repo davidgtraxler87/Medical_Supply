@@ -31,25 +31,25 @@ If running from an IDE, complete the following:
 ## Functionality
 
 ### Home
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Home.JPG"  width="475" height="300">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Home.JPG"  width="auto" height="auto">
 
 ### About
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_About.JPG" width="450" height="600">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_About.JPG" width="auto" height="auto">
 
 ### Products
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Products.JPG" width="600" height="500">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Products.JPG" width="auto" height="auto">
 
 ### Contact
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Contact.JPG" width="600" height="500">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Contact.JPG" width="auto" height="auto">
 
 ### Login
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Login.JPG" width="400" height="275">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Login.JPG" width="auto" height="auto">
 
 ### Register
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Register.JPG" width="400" height="685">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Register.JPG" width="auto" height="auto">
 
 ### Profile 
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Profile.jpg" width="400" height="685">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Profile.jpg" width="auto" height="auto">
 
 ### Cart
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Cart.JPG" width="auto" height="auto">
