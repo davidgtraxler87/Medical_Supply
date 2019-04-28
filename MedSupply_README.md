@@ -37,10 +37,10 @@ If running from an IDE, complete the following:
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_About.JPG" width="525" height="700">
 
 ### Products
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Products.JPG" width="400" height="685">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Products.JPG" width="525" height="700">
 
 ### Contact
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Contact.JPG" width="400" height="685">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Contact.JPG" width="525" height="700">
 
 ### Login
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Login.JPG" width="400" height="685">
