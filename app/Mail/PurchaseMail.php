@@ -18,7 +18,7 @@ class PurchaseMail extends Mailable
     {
         $this->user = $user;
         $this->purchaseData = $orders;
-        //$this->detailText = $request->input('detailText');
+
     }
 
     public function build()

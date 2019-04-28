@@ -235,10 +235,10 @@
                                 <div class="col-md-2">
 
                                     <select id="month" class="form-control{{ $errors->has('month') ? ' is-invalid' : '' }}"
-                                            name="month" value="{{ old('month') ? old('month') : $month  }}" required >
+                                            name="month"  required >
                                         <option></option>
-                                        @foreach(config('constants.month') as $abbr => $month)
-                                            <option value="{{$abbr}}">{{$month}}</option>
+                                        @foreach(config('constants.month') as $abbr => $m)
+                                            <option value="{{$abbr}}" {{ old('month') === $abbr ?  'selected': ($month === $abbr ? 'selected' : '')  }}>{{$m}}</option>
                                         @endforeach
                                     </select>
                                     @if ($errors->has('month'))
@@ -251,10 +251,10 @@
 
                                 <div class="col-md-2">
                                     <select id="year" class="form-control{{ $errors->has('year') ? ' is-invalid' : '' }}"
-                                            name="year" value="{{ old('year') ? old('year') : $year  }}" required autofocus>
+                                            name="year"  required >
                                         <option></option>
-                                        @foreach(config('constants.year') as $abbr => $year)
-                                            <option value="{{$abbr}}">{{$year}}</option>
+                                        @foreach(config('constants.year') as $abbr => $y)
+                                            <option value="{{$abbr}}" {{ old('year') === $y ?  'selected': ($year === $y ? 'selected' : '')  }}>{{$y}}</option>
                                         @endforeach
                                     </select>
                                     @if ($errors->has('year'))
@@ -280,9 +280,9 @@
                                 </div>
                             </div>
 
-                            <button class="btn btn-primary" type="submit" >Submit </button>
-                            <button class="btn btn-secondary" type="reset" >Reset</button>
-                            <button  class="btn btn-secondary" id="delete" >Delete</button>
+                            <div class="form-group row justify-content-md-center">
+                                <button class="btn btn-primary" type="submit">Submit</button>
+                            </div>
                     </form>
                 </div>
             </div>

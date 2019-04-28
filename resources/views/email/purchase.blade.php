@@ -10,7 +10,7 @@
 
 <body>
 <div>
-    <h1>Thank you {{ $user->first_name }}for your purchase! </h1>
+    <h1>Thank you, {{  $user->first_name }} for your purchase! </h1>
     <p>The items you ordered are listed below. </p>
 
     <table id="userCart" class="datatable mdl-data-table dataTable" cellspacing="0"
@@ -38,7 +38,7 @@
             @endphp
 
             <tr>
-                <td scope="row">'<img src="images/product/{{$equipment->image}}" width="auto" height="100px"/>'</td>
+                <td scope="row"><img src="public/images/product/{{$cartItem->image}}" width="auto" height="100px"/></td>
                 <td>{{$equipment->equipment_id}}</td>
                 <td>{{$equipment->name}}</td>
                 <td>{{$equipment->brand}}</td>
