@@ -52,7 +52,7 @@ If running from an IDE, complete the following:
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Profile.jpg" width="400" height="685">
 
 ### Cart
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Cart.JPG" width="650" height="500">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Cart.JPG" width="600" height="450">
 
 
 ## Built With
