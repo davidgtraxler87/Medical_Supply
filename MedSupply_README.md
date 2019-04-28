@@ -31,7 +31,7 @@ If running from an IDE, complete the following:
 ## Functionality
 
 ### Home
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Home.JPG"  width="400" height="400">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Home.JPG"  width="300" height="400">
 
 ### About
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_About.JPG" width="400" height="685">
