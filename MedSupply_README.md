@@ -43,7 +43,7 @@ If running from an IDE, complete the following:
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Contact.JPG" width="600" height="500">
 
 ### Login
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Login.JPG" width="400" height="250">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Login.JPG" width="400" height="275">
 
 ### Register
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Register.JPG" width="400" height="685">
@@ -52,7 +52,7 @@ If running from an IDE, complete the following:
 <img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Profile.jpg" width="400" height="685">
 
 ### Cart
-<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Cart.JPG" width="600" height="450">
+<img src="https://github.com/davidgtraxler87/Medical_Supply/blob/master/MedSupplyScreenshots/MedSupply_Cart.JPG" width="600" height="475">
 
 
 ## Built With
