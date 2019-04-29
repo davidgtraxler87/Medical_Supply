@@ -96,7 +96,7 @@ class BackEndController extends Controller
             // If true, get the orders from cart and create email. ie. mailable class and view
             $orders = Cart::where('user_id', $user->id)->get();
             $email = new PurchaseMail($user, $orders);
-            Mail::to('david.g.traxler87@gmail.com')->send($email);
+            Mail::to($user->email)->send($email);
             // Delete data for user from order_cart table
             Cart::where('user_id', $user->id)->delete();
             // redirect order placed page?
